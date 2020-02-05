@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App render is rendered properly 1`] = `
+<Fragment>
+  <MainNav
+    onRequestBlocks={[Function]}
+  />
+</Fragment>
+`;
