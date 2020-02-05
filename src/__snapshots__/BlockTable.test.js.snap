@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlockTable render renders a table with all the blocks 1`] = `
+<ForwardRef
+  hover={true}
+  striped={true}
+>
+  <thead>
+    <tr>
+      <th>
+        Block Hash
+      </th>
+      <th>
+        Timestamp
+      </th>
+      <th>
+        # Actions
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      key="1"
+    >
+      <td>
+        1
+      </td>
+      <td>
+        2/5/2020, 3:46:32 AM
+      </td>
+      <td>
+        0
+      </td>
+    </tr>
+    <tr
+      key="2"
+    >
+      <td>
+        2
+      </td>
+      <td>
+        2/4/2020, 3:46:32 AM
+      </td>
+      <td>
+        0
+      </td>
+    </tr>
+    <tr
+      key="3"
+    >
+      <td>
+        3
+      </td>
+      <td>
+        2/3/2020, 3:46:32 AM
+      </td>
+      <td>
+        0
+      </td>
+    </tr>
+  </tbody>
+</ForwardRef>
+`;

@@ -5,5 +5,8 @@ exports[`App render is rendered properly 1`] = `
   <MainNav
     onRequestBlocks={[Function]}
   />
+  <BlockTable
+    blocks={Array []}
+  />
 </Fragment>
 `;

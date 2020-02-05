@@ -1,6 +1,7 @@
 import React from 'react';
 import MainNav from './MainNav';
 import api from './apiWrapper';
+import BlockTable from './BlockTable';
 
 class App extends React.Component {
 
@@ -13,14 +14,17 @@ class App extends React.Component {
   }
 
   loadBlocks = async () => {
-    const blocks = api.getLastBlocks();
+    const blocks = await api.getLastBlocks();
     this.setState({blocks});
   }
 
   render = () => {
+    let {blocks} = this.state;
+
     return (
       <>
         <MainNav onRequestBlocks={this.loadBlocks} />
+        <BlockTable blocks={blocks} />
       </>
     );
   }
