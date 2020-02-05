@@ -5,11 +5,11 @@ const api = new JsonRpc("https://api.eosnewyork.io");
 export default {
   getLastBlocks: async (limit = 10) => {
     const {head_block_num} = await api.get_info();
-    let blockPromises = []
+    let blocks = []
     for(let i = 0; i < limit; i++) {
-      let blockPromise = api.get_block(head_block_num - i);
-      blockPromises.push(blockPromise);
+      let block = await api.get_block(head_block_num - i);
+      blocks.push(block);
     }
-    return Promise.all(blockPromises);
+    return blocks;
   }
 }
