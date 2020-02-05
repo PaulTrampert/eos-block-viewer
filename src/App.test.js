@@ -1,6 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import App from './App';
+import MainNav from './MainNav';
 import api from './apiWrapper';
 
 jest.mock('./apiWrapper');
@@ -37,6 +38,12 @@ describe('App', () => {
       const result = shallow(<App />);
 
       expect(result).toMatchSnapshot();
+    });
+
+    it("binds loadBlocks to MainNav's onRequestBlocks event", () => {
+      const result = shallow(<App />);
+
+      expect(result.find(MainNav).props().onRequestBlocks).toBe(result.instance().loadBlocks);
     });
   });
 });
