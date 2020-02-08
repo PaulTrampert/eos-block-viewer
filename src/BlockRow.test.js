@@ -26,8 +26,22 @@ describe('BlockRow', () => {
       expect(countActions).toHaveBeenCalledWith(block);
     });
 
+    it("binds toggleShowDetails to the table row's onClick event", () => {
+      expect(subject.find('tr').props().onClick).toBe(subject.instance().toggleShowDetails);
+    });
+
     it('renders the block data in a table row', () => {
       expect(subject).toMatchSnapshot();
+    });
+
+    describe('when show details is true', () => {
+      beforeEach(() => {
+        subject.setState({showDetails: true});
+      });
+
+      it('renders the full block details', () => {
+        expect(subject).toMatchSnapshot();
+      });
     });
   });
 });

@@ -1,15 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BlockRow render renders the block data in a table row 1`] = `
-<tr>
-  <td>
-    1
-  </td>
-  <td>
-    2/5/2020, 3:46:32 AM
-  </td>
-  <td>
-    0
-  </td>
-</tr>
+<Fragment>
+  <tr
+    onClick={[Function]}
+  >
+    <td>
+      1
+    </td>
+    <td>
+      2/5/2020, 3:46:32 AM
+    </td>
+    <td>
+      0
+    </td>
+  </tr>
+</Fragment>
+`;
+
+exports[`BlockRow render when show details is true renders the full block details 1`] = `
+<Fragment>
+  <tr
+    onClick={[Function]}
+  >
+    <td
+      colSpan={3}
+    >
+      <pre>
+        {
+  "id": "1",
+  "timestamp": "2020-02-05T03:46:32.000",
+  "transactions": []
+}
+      </pre>
+    </td>
+  </tr>
+</Fragment>
 `;
