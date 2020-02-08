@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlockRow render renders the block data in a table row 1`] = `
+<tr>
+  <td>
+    1
+  </td>
+  <td>
+    2/5/2020, 3:46:32 AM
+  </td>
+  <td>
+    0
+  </td>
+</tr>
+`;

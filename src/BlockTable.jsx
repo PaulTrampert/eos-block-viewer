@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {
   Table
 } from 'react-bootstrap';
+import BlockRow from './BlockRow';
 
 class BlockTable extends React.Component {
   render = () => {
@@ -22,11 +23,7 @@ class BlockTable extends React.Component {
         <tbody>
           {
             blocks.map(block => (
-              <tr key={block.id}>
-                <td>{block.id}</td>
-                <td>{new Date(block.timestamp).toLocaleString()}</td>
-                <td>{block.transactions.length}</td>
-              </tr>
+              <BlockRow key={block.id} block={block} />
             ))
           }
         </tbody>
