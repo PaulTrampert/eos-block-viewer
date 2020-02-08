@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import RawBlockView from './RawBlockView';
 
 const FullBlockRow = ({block, onClick}) => (
   <tr onClick={onClick}>
     <td colSpan={3}>
-      <pre>
-        {JSON.stringify(block, null, 2)}
-      </pre>
+      <RawBlockView block={block} />
     </td>
   </tr>
 )

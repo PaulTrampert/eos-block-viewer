@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RawBlockView renders the stringified block within <pre> tags 1`] = `
+<pre>
+  {}
+</pre>
+`;

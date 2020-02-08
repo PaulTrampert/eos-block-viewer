@@ -7,13 +7,15 @@ exports[`FullBlockRow render renders the raw contents of the block 1`] = `
   <td
     colSpan={3}
   >
-    <pre>
-      {
-  "id": "asdfasdf",
-  "timestamp": "2020-02-08T20:20:20Z",
-  "transactions": []
-}
-    </pre>
+    <RawBlockView
+      block={
+        Object {
+          "id": "asdfasdf",
+          "timestamp": "2020-02-08T20:20:20Z",
+          "transactions": Array [],
+        }
+      }
+    />
   </td>
 </tr>
 `;
