@@ -2,6 +2,8 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import BlockRow from './BlockRow';
 import countActions from './countActions';
+import SummaryBlockRow from './SummaryBlockRow';
+import FullBlockRow from './FullBlockRow';
 
 jest.mock('./countActions');
 
@@ -22,12 +24,8 @@ describe('BlockRow', () => {
   });
 
   describe('render', () => {
-    it('calls countActions to count the actions', () => {
-      expect(countActions).toHaveBeenCalledWith(block);
-    });
-
-    it("binds toggleShowDetails to the table row's onClick event", () => {
-      expect(subject.find('tr').props().onClick).toBe(subject.instance().toggleShowDetails);
+    it("binds showDetails to the SummaryBlockRow's onClick event", () => {
+      expect(subject.find(SummaryBlockRow).props().onClick).toBe(subject.instance().showDetails);
     });
 
     it('renders the block data in a table row', () => {
@@ -37,6 +35,10 @@ describe('BlockRow', () => {
     describe('when show details is true', () => {
       beforeEach(() => {
         subject.setState({showDetails: true});
+      });
+
+      it("binds hideDetails to the FullBlockRow's onClick event", () => {
+        expect(subject.find(FullBlockRow).props().onClick).toBe(subject.instance().hideDetails);
       });
 
       it('renders the full block details', () => {

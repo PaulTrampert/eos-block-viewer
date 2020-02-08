@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import countActions from './countActions';
+import FullBlockRow from './FullBlockRow';
+import SummaryBlockRow from './SummaryBlockRow';
 
 class BlockRow extends React.Component {
   constructor(props) {
@@ -9,8 +10,12 @@ class BlockRow extends React.Component {
     this.state = {showDetails: false};
   }
 
-  toggleShowDetails = () => {
-    this.setState({showDetails: !this.state.showDetails});
+  showDetails = () => {
+    this.setState({showDetails: true});
+  }
+
+  hideDetails = () => {
+    this.setState({showDetails: false});
   }
 
   render = () => {
@@ -21,21 +26,11 @@ class BlockRow extends React.Component {
       <>
         {
           !showDetails &&
-          <tr onClick={this.toggleShowDetails}>
-            <td>{block.id}</td>
-            <td>{new Date(block.timestamp).toLocaleString()}</td>
-            <td>{countActions(block)}</td>
-          </tr>
+          <SummaryBlockRow block={block} onClick={this.showDetails} />
         }
         {
           showDetails &&
-          <tr onClick={this.toggleShowDetails}>
-            <td colSpan={3}>
-              <pre>
-                {JSON.stringify(block, undefined, 2)}
-              </pre>
-            </td>
-          </tr>
+          <FullBlockRow block={block} onClick={this.hideDetails} />
         }
       </>
     );

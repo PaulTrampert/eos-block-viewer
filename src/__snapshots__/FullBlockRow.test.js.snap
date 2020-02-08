@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FullBlockRow render renders the raw contents of the block 1`] = `
+<tr
+  onClick={[MockFunction]}
+>
+  <td
+    colSpan={3}
+  >
+    <pre>
+      {
+  "id": "asdfasdf",
+  "timestamp": "2020-02-08T20:20:20Z",
+  "transactions": []
+}
+    </pre>
+  </td>
+</tr>
+`;

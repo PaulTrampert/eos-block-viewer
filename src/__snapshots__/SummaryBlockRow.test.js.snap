@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SummaryBlockRow render renders the block's id, timestamp, and the number of actions 1`] = `
+<tr
+  onClick={[MockFunction]}
+>
+  <td>
+    asdfasdf
+  </td>
+  <td>
+    2/8/2020, 3:20:20 PM
+  </td>
+  <td>
+    0
+  </td>
+</tr>
+`;
