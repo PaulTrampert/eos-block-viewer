@@ -66,6 +66,18 @@ pipeline {
         }
       }
     }
+
+    stage('Deploy') {
+      when {
+        branch 'master'
+      }
+
+      steps {
+        withDockerRegistry(url: "https://${DOCKER_REPO}", credentialsId: DOCKER_REPO_CREDENTIALS) {
+          sh 'docker stack deploy --compose-file docker-compose.yml eos'
+        }
+      }
+    }
   }
   post {
     changed {

@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  eos:
+    image: docker.ptrampert.com/eos-image-viewer
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.eos.rule=Host(`eos.ptrampert.com`)"
+        - "traefik.http.routers.eos.entrypoints=websecure"
+        - "traefik.http.routers.eos.tls.certresolver=letsencrypt"
+        - "traefik.http.services.eos-service.loadbalancer.server.port=80"
