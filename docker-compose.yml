@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   eos:
-    image: docker.ptrampert.com/eos-image-viewer
+    image: docker.ptrampert.com/eos-block-viewer
     deploy:
       labels:
         - "traefik.enable=true"

@@ -11,7 +11,7 @@ pipeline {
     DOCKER_REPO = "docker.ptrampert.com"
     DOCKER_REPO_CREDENTIALS = "nexus"
     IMAGE_TAG = getImageTag(BRANCH_NAME)
-    IMAGE_NAME = "$DOCKER_REPO/eos-image-viewer"
+    IMAGE_NAME = "$DOCKER_REPO/eos-block-viewer"
   }
 
   options {
