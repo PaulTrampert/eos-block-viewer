@@ -61,7 +61,6 @@ pipeline {
           withDockerRegistry(url: "https://${DOCKER_REPO}", credentialsId: DOCKER_REPO_CREDENTIALS) {
             sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
             sh "docker push ${IMAGE_NAME}:${IMAGE_TAG}"
-            sh "docker rmi ${IMAGE_NAME}:${IMAGE_TAG}"
           }
         }
       }
