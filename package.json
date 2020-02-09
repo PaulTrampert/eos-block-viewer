@@ -8,12 +8,11 @@
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.4.1",
     "eosjs": "^20.0.3",
-    "markdown-it": "^10.0.0",
-    "mustache": "^4.0.0",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.1"
+    "react-scripts": "3.3.1",
+    "ricardian-template-toolkit": "^0.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -22,8 +21,7 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app",
-    "fix": true
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [

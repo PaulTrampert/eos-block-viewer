@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RicardianAction render when the contract gets rendered just fine renders the contract meta and html 1`] = `
+<div
+  className="ricardian"
+>
+  <RicardianMeta
+    title="The Everlasting Compact"
+  />
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<p>Hi there! I'm a contract!</p>",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`RicardianAction render when there is an error rendering the contract renders an error view 1`] = `
+<div>
+  <p>
+    Failed to render action contract.
+  </p>
+  <p>
+    it broke!
+  </p>
+</div>
+`;

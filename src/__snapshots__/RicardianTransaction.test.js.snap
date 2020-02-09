@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RicardianTransaction renders an action for each action on the transaction 1`] = `
+<Fragment>
+  <RicardianAction
+    abi={
+      Object {
+        "version": "0.2.0",
+      }
+    }
+    actionIndex={0}
+    key="0"
+    transaction={
+      Object {
+        "actions": Array [
+          Object {
+            "account": "a",
+          },
+          Object {
+            "account": "b",
+          },
+          Object {
+            "account": "a",
+          },
+        ],
+      }
+    }
+  />
+  <RicardianAction
+    abi={
+      Object {
+        "version": "0.1.0",
+      }
+    }
+    actionIndex={1}
+    key="1"
+    transaction={
+      Object {
+        "actions": Array [
+          Object {
+            "account": "a",
+          },
+          Object {
+            "account": "b",
+          },
+          Object {
+            "account": "a",
+          },
+        ],
+      }
+    }
+  />
+  <RicardianAction
+    abi={
+      Object {
+        "version": "0.2.0",
+      }
+    }
+    actionIndex={2}
+    key="2"
+    transaction={
+      Object {
+        "actions": Array [
+          Object {
+            "account": "a",
+          },
+          Object {
+            "account": "b",
+          },
+          Object {
+            "account": "a",
+          },
+        ],
+      }
+    }
+  />
+</Fragment>
+`;

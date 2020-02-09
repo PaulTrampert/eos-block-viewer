@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RicardianMeta render when summary is not set renders without a summary 1`] = `
+<div>
+  <h1>
+    <img
+      alt="some icon"
+      src="some icon"
+      style={
+        Object {
+          "height": 50,
+          "width": 50,
+        }
+      }
+    />
+    some title
+  </h1>
+</div>
+`;
+
+exports[`RicardianMeta render when summary is set renders with a summary 1`] = `
+<div>
+  <h1>
+    <img
+      alt="some icon"
+      src="some icon"
+      style={
+        Object {
+          "height": 50,
+          "width": 50,
+        }
+      }
+    />
+    some title
+  </h1>
+  <h2>
+    the summary
+  </h2>
+</div>
+`;
+
+exports[`RicardianMeta render when title is not set doesn't render the header 1`] = `
+<div>
+  <h2>
+    the summary
+  </h2>
+</div>
+`;
+
+exports[`RicardianMeta render when title is set when icon is not set renders the header with no icon 1`] = `
+<div>
+  <h1>
+    some title
+  </h1>
+  <h2>
+    the summary
+  </h2>
+</div>
+`;
+
+exports[`RicardianMeta render when title is set when icon is set renders the header with an icon 1`] = `
+<div>
+  <h1>
+    <img
+      alt="some icon"
+      src="some icon"
+      style={
+        Object {
+          "height": 50,
+          "width": 50,
+        }
+      }
+    />
+    some title
+  </h1>
+  <h2>
+    the summary
+  </h2>
+</div>
+`;

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RicardianBlockView render when abis have been loaded renders each transaction in a RicardianTransaction view 1`] = `
+<Fragment>
+  <RicardianTransaction
+    abis={
+      Object {
+        "a": Object {},
+        "b": Object {},
+      }
+    }
+    key="0"
+    transaction={Object {}}
+  />
+  <RicardianTransaction
+    abis={
+      Object {
+        "a": Object {},
+        "b": Object {},
+      }
+    }
+    key="1"
+    transaction={Object {}}
+  />
+</Fragment>
+`;
+
+exports[`RicardianBlockView render when abis have not been loaded renders the loading spinner 1`] = `
+<div
+  className="loading"
+>
+  <Spinner
+    animation="border"
+    role="status"
+  >
+    <span
+      className="sr-only"
+    >
+      Loading...
+    </span>
+  </Spinner>
+</div>
+`;

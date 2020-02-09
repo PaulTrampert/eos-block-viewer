@@ -1,0 +1,4 @@
+.ricardian :global(.variable) {
+  display: inline;
+  font-weight: bold;
+}

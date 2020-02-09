@@ -2,6 +2,8 @@ import {JsonRpc} from 'eosjs';
 
 const api = new JsonRpc("https://api.eosnewyork.io");
 
+const abiCache = {};
+
 export default {
   getLastBlocks: async (limit = 10) => {
     const {head_block_num} = await api.get_info();
@@ -11,5 +13,12 @@ export default {
       blocks.push(block);
     }
     return blocks;
+  },
+
+  getAbi: async (accountName) => {
+    if(!abiCache[accountName]) {
+      abiCache[accountName] = await api.get_abi(accountName);
+    }
+    return abiCache[accountName];
   }
 }

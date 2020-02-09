@@ -27,5 +27,15 @@ describe('FullBlockRow', () => {
     it('binds the onClick event', () => {
       expect(subject.find('tr').props().onClick).toBe(onClick);
     });
+
+    describe('when showRicardian is true', () => {
+      beforeEach(() => {
+        subject.setState({showRicardian: true});
+      });
+
+      it('renders the raw contents of the block', () => {
+        expect(subject).toMatchSnapshot();
+      });
+    })
   });
 });
