@@ -4,6 +4,10 @@ import SummaryBlockRow from './SummaryBlockRow';
 import countActions from './countActions';
 
 jest.mock('./countActions');
+jest.spyOn(global, 'Date')
+  .mockImplementation(() => ({
+    toLocaleString: () => "this is the local representation of datetime"
+  }));
 
 describe('SummaryBlockRow', () => {
   let subject;

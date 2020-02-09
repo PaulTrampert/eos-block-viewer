@@ -8,7 +8,7 @@ exports[`SummaryBlockRow render renders the block's id, timestamp, and the numbe
     asdfasdf
   </td>
   <td>
-    2/8/2020, 3:20:20 PM
+    this is the local representation of datetime
   </td>
   <td>
     0
