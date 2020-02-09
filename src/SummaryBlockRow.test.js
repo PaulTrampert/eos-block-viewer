@@ -13,7 +13,7 @@ describe('SummaryBlockRow', () => {
   beforeEach(() => {
     block = {
       id: 'asdfasdf',
-      timestamp: '2020-02-08T20:20:20Z',
+      timestamp: '2020-02-08T20:20:20',
       transactions: []
     };
 
