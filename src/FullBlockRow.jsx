@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import Tabs from 'react-bootstrap/Tabs';
+import Tab from 'react-bootstrap/Tab';
 import RawBlockView from './RawBlockView';
 import RicardianBlockView from './RicardianBlockView';
 
@@ -8,18 +10,29 @@ class FullBlockRow extends React.Component {
     super(props);
 
     this.state = {
-      showRicardian: false
+      tabKey: 'raw'
     };
+  }
+
+  setTabKey = (tabKey, event) => {
+    event.stopPropagation();
+    this.setState({tabKey});
   }
 
   render = () => {
     let {block, onClick} = this.props;
-    let {showRicardian} = this.state;
+    let {tabKey} = this.state;
     return (
       <tr onClick={onClick}>
         <td colSpan={3}>
-          {!showRicardian && <RawBlockView block={block} />}
-          {showRicardian && <RicardianBlockView block={block} />}
+          <Tabs activeKey={tabKey} onSelect={this.setTabKey}>
+            <Tab eventKey="raw" title="Raw View">
+              <RawBlockView block={block} />
+            </Tab>
+            <Tab eventKey="ricardian" title="Ricardian Contracts">
+              <RicardianBlockView block={block} />
+            </Tab>
+          </Tabs>
         </td>
       </tr>
     )

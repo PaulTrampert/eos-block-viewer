@@ -1,6 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import FullBlockRow from './FullBlockRow';
+import { Tabs } from 'react-bootstrap';
 
 describe('FullBlockRow', () => {
   let subject;
@@ -17,10 +18,31 @@ describe('FullBlockRow', () => {
     onClick = jest.fn();
 
     subject = shallow(<FullBlockRow block={block} onClick={onClick} />);
+  });
+
+  describe('setTabKey', () => {
+    let event;
+    beforeEach(() => {
+      event = {
+        stopPropagation: jest.fn()
+      }
+    })
+
+    it('stops the event propagation', () => {
+      subject.instance().setTabKey("key", event);
+
+      expect(event.stopPropagation).toHaveBeenCalled();
+    });
+
+    it('sets the tabKey in state', () => {
+      subject.instance().setTabKey("key", event);
+
+      expect(subject.state().tabKey).toBe('key');
+    });
   })
 
   describe('render', () => {
-    it('renders the raw contents of the block', () => {
+    it('renders tabs for the raw contents of the block and the ricardian contracts', () => {
       expect(subject).toMatchSnapshot();
     });
 
@@ -28,14 +50,8 @@ describe('FullBlockRow', () => {
       expect(subject.find('tr').props().onClick).toBe(onClick);
     });
 
-    describe('when showRicardian is true', () => {
-      beforeEach(() => {
-        subject.setState({showRicardian: true});
-      });
-
-      it('renders the raw contents of the block', () => {
-        expect(subject).toMatchSnapshot();
-      });
+    it('binds the onSelect event of tabs', () => {
+      expect(subject.find(Tabs).props().onSelect).toBe(subject.instance().setTabKey);
     })
   });
 });
