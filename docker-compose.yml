@@ -2,6 +2,8 @@ version: '3.7'
 services:
   eos:
     image: docker.ptrampert.com/eos-block-viewer
+    networks:
+      - traefik
     deploy:
       labels:
         - "traefik.enable=true"
@@ -9,3 +11,7 @@ services:
         - "traefik.http.routers.eos.entrypoints=websecure"
         - "traefik.http.routers.eos.tls.certresolver=letsencrypt"
         - "traefik.http.services.eos-service.loadbalancer.server.port=80"
+networks:
+  traefik:
+    external: true
+    name: traefik
