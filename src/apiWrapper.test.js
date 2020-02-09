@@ -1,12 +1,14 @@
 import api from './apiWrapper';
 import {JsonRpc} from 'eosjs';
+import {abiCache} from './apiWrapper';
 
 jest.mock('eosjs', () => ({
   JsonRpc: jest.fn().mockImplementation(() => ({
     get_info: () => ({
       head_block_num: 987654321
     }),
-    get_block: blockNum => ({id: blockNum})
+    get_block: blockNum => ({id: blockNum}),
+    get_abi: jest.fn().mockImplementation(account => ({account}))
   }))
 }));
 
@@ -14,6 +16,27 @@ describe('apiWrapper', () => {
 
   it('creates a singleton api', () => {
     expect(JsonRpc).toHaveBeenCalledWith("https://api.eosnewyork.io");
+  });
+
+  describe('getAbi', () => {
+    beforeEach(() => {
+      for(let key in abiCache) {
+        delete abiCache[key];
+      }
+    })
+
+    it('calls the api to fetch and cache uncached abis', async () => {
+      await api.getAbi('bloop');
+
+      expect(abiCache['bloop']).toEqual({account: 'bloop'});
+    });
+
+    it("doesn't try to refetch cached abis", async () => {
+      abiCache['bloop'] = {account: 'blerp'};
+      await api.getAbi('bloop');
+
+      expect(abiCache['bloop']).toEqual({account: 'blerp'});
+    })
   });
 
   describe('getLastBlocks', () => {

@@ -4,7 +4,7 @@ const api = new JsonRpc("https://api.eosnewyork.io");
 
 const abiCache = {};
 
-export default {
+const apiWrapper = {
   getLastBlocks: async (limit = 10) => {
     const {head_block_num} = await api.get_info();
     let blocks = []
@@ -21,4 +21,9 @@ export default {
     }
     return abiCache[accountName];
   }
-}
+};
+
+export {
+  apiWrapper as default,
+  abiCache
+};
