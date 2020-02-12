@@ -14,21 +14,20 @@ exports[`RicardianAction render when the contract gets rendered just fine render
       }
     }
   />
+  <hr />
 </div>
 `;
 
 exports[`RicardianAction render when the rendered contract is empty renders an error view 1`] = `
-<div
-  className="ricardian"
->
-  <RicardianMeta />
-  <div
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "",
-      }
-    }
+<div>
+  <RicardianMeta
+    summary="action"
+    title="Test"
   />
+  <p>
+    {"some":"data"}
+  </p>
+  <hr />
 </div>
 `;
 
@@ -41,5 +40,6 @@ exports[`RicardianAction render when there is an error rendering the contract re
   <p>
     {"some":"data"}
   </p>
+  <hr />
 </div>
 `;

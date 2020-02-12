@@ -32,6 +32,7 @@ class RicardianAction extends React.Component {
         <div className={styles.ricardian}>
           <RicardianMeta {...meta} />
           <div dangerouslySetInnerHTML={html} />
+          <hr />
         </div>
       );
     } catch (e) {
@@ -40,6 +41,7 @@ class RicardianAction extends React.Component {
         <div>
           <RicardianMeta title={action.account} summary={action.name} />
           <p>{JSON.stringify(action.data)}</p>
+          <hr />
         </div>
       )
     }
