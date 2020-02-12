@@ -50,6 +50,19 @@ describe('RicardianAction', () => {
       });
     });
 
+    describe('when the rendered contract is empty', () => {
+      beforeEach(() => {
+        contract.getMetadata.mockReturnValue({});
+        contract.getHtml.mockReturnValue("");
+        contractFactory.create.mockReturnValue(contract);
+        subject = shallow(<RicardianAction transaction={transaction} abi={abi} actionIndex={actionIndex} />);
+      });
+
+      it('renders an error view', () => {
+        expect(subject).toMatchSnapshot();
+      })
+    });
+
     describe('when there is an error rendering the contract', () => {
       beforeEach(() => {
         contractFactory.create.mockImplementation(() => {

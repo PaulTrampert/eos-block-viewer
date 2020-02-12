@@ -24,6 +24,10 @@ class RicardianAction extends React.Component {
         __html: contract.getHtml()
       };
 
+      if (!meta.title && !meta.summary && !html.__html) {
+        throw new Error("Empty contract");
+      }
+
       return (
         <div className={styles.ricardian}>
           <RicardianMeta {...meta} />
