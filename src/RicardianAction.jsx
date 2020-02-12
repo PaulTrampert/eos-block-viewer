@@ -36,6 +36,7 @@ class RicardianAction extends React.Component {
         </div>
       );
     } catch (e) {
+      console.warn(e);
       var action = transaction.actions[actionIndex];
       return (
         <div>
