@@ -19,11 +19,12 @@ exports[`RicardianAction render when the contract gets rendered just fine render
 
 exports[`RicardianAction render when there is an error rendering the contract renders an error view 1`] = `
 <div>
+  <RicardianMeta
+    summary="action"
+    title="Test"
+  />
   <p>
-    Failed to render action contract.
-  </p>
-  <p>
-    it broke!
+    {"some":"data"}
   </p>
 </div>
 `;

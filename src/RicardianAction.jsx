@@ -31,10 +31,11 @@ class RicardianAction extends React.Component {
         </div>
       );
     } catch (e) {
+      var action = transaction.actions[actionIndex];
       return (
         <div>
-          <p>Failed to render action contract.</p>
-          <p>{e.message}</p>
+          <RicardianMeta title={action.account} summary={action.name} />
+          <p>{JSON.stringify(action.data)}</p>
         </div>
       )
     }

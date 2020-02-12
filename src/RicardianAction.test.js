@@ -15,9 +15,19 @@ describe('RicardianAction', () => {
   let html;
 
   beforeEach(() => {
-    transaction = {};
+    transaction = {
+      actions: [
+        {
+          account: "Test",
+          name: "action",
+          data: {
+            some: 'data'
+          }
+        }
+      ]
+    };
     abi = {}
-    actionIndex = 2;
+    actionIndex = 0;
     meta = {
       title: 'The Everlasting Compact'
     }
