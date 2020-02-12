@@ -24,17 +24,25 @@ class RicardianAction extends React.Component {
         __html: contract.getHtml()
       };
 
+      if (!meta.title && !meta.summary && !html.__html) {
+        throw new Error("Empty contract");
+      }
+
       return (
         <div className={styles.ricardian}>
           <RicardianMeta {...meta} />
           <div dangerouslySetInnerHTML={html} />
+          <hr />
         </div>
       );
     } catch (e) {
+      console.warn(e);
+      var action = transaction.actions[actionIndex];
       return (
         <div>
-          <p>Failed to render action contract.</p>
-          <p>{e.message}</p>
+          <RicardianMeta title={action.account} summary={action.name} />
+          <p>{JSON.stringify(action.data)}</p>
+          <hr />
         </div>
       )
     }
