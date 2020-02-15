@@ -8,11 +8,12 @@ exports[`App render renders the main nav and block table 1`] = `
   />
   <BlockTable
     blocks={Array []}
+    loadingBlocks={false}
   />
 </Fragment>
 `;
 
-exports[`App render while blocks are loading passes the loadingBlocks state to the MainNav 1`] = `
+exports[`App render while blocks are loading passes the loadingBlocks state to the MainNav and BlockTable 1`] = `
 <Fragment>
   <MainNav
     loadingBlocks={true}
@@ -20,6 +21,7 @@ exports[`App render while blocks are loading passes the loadingBlocks state to t
   />
   <BlockTable
     blocks={Array []}
+    loadingBlocks={true}
   />
 </Fragment>
 `;

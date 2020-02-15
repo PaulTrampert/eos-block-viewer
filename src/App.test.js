@@ -50,7 +50,7 @@ describe('App', () => {
         subject.setState({loadingBlocks: true});
       });
 
-      it('passes the loadingBlocks state to the MainNav', () => {
+      it('passes the loadingBlocks state to the MainNav and BlockTable', () => {
         expect(subject).toMatchSnapshot();
       });
     });

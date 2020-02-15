@@ -53,6 +53,30 @@ exports[`BlockTable render when blocks are loaded renders a table with all the b
 </ForwardRef>
 `;
 
+exports[`BlockTable render when blocks are loading renders the TableLoadingView 1`] = `
+<ForwardRef
+  hover={true}
+  striped={true}
+>
+  <thead>
+    <tr>
+      <th>
+        Block Hash
+      </th>
+      <th>
+        Timestamp
+      </th>
+      <th>
+        # Actions
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <TableLoadingView />
+  </tbody>
+</ForwardRef>
+`;
+
 exports[`BlockTable render when there are no blocks loaded renders the EmptyTableView 1`] = `
 <ForwardRef
   hover={true}

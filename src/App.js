@@ -36,7 +36,7 @@ class App extends React.Component {
     return (
       <>
         <MainNav onRequestBlocks={this.loadBlocks} loadingBlocks={loadingBlocks} />
-        <BlockTable blocks={blocks} />
+        <BlockTable blocks={blocks} loadingBlocks={loadingBlocks} />
       </>
     );
   }

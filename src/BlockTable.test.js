@@ -29,6 +29,16 @@ describe('BlockTable', () => {
   });
 
   describe('render', () => {
+    describe('when blocks are loading', () => {
+      beforeEach(() => {
+        subject.setProps({loadingBlocks: true});
+      });
+
+      it('renders the TableLoadingView', () => {
+        expect(subject).toMatchSnapshot();
+      });
+    })
+
     describe("when blocks are loaded", () => {
       it('renders a table with all the blocks', () => {
         expect(subject).toMatchSnapshot();
