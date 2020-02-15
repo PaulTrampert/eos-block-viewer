@@ -1,4 +1,13 @@
 ## Instructions to Run Locally
+#### Run Tests
+To run the tests in watch mode, run the following in the terminal.
+```
+npm install
+npm test
+```
+
+To run a single run, use `npm run test-ci`.
+
 #### Run with NPM
 Run the following commands in the terminal:
 ```
