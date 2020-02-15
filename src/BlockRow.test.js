@@ -38,7 +38,7 @@ describe('BlockRow', () => {
       subject.setState({
         showDetails: true
       });
-    })
+    });
 
     it('sets state.showDetails to false', () => {
       instance.hideDetails();
