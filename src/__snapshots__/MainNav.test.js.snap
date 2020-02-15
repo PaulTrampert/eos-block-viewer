@@ -9,6 +9,13 @@ exports[`MainNav render renders the nav bar containing the site title and load b
   variant="dark"
 >
   <NavbarBrand>
+    <ForwardRef(SvgEosIcon)
+      style={
+        Object {
+          "marginRight": "0.5em",
+        }
+      }
+    />
     EOS Block Viewer
   </NavbarBrand>
   <Button
@@ -32,6 +39,13 @@ exports[`MainNav render when blocks are loading the load button is disabled 1`] 
   variant="dark"
 >
   <NavbarBrand>
+    <ForwardRef(SvgEosIcon)
+      style={
+        Object {
+          "marginRight": "0.5em",
+        }
+      }
+    />
     EOS Block Viewer
   </NavbarBrand>
   <Button
