@@ -1,3 +1,5 @@
+[![Master Build Status](https://jenkins.ptrampert.com/buildStatus/icon?job=PaulTrampert%2Feos-block-viewer%2Fmaster)](https://jenkins.ptrampert.com/job/PaulTrampert/job/eos-block-viewer/job/master/)
+
 ## Instructions to Run Locally
 #### Run Tests
 To run the tests in watch mode, run the following in the terminal.
