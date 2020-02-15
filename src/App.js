@@ -9,21 +9,33 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      loadingBlocks: false,
       blocks: []
     };
   }
 
   loadBlocks = async () => {
+    this.setState({
+      loadingBlocks: true
+    });
+
     const blocks = await api.getLastBlocks();
-    this.setState({blocks});
+
+    this.setState({
+      loadingBlocks: false,
+      blocks
+    });
   }
 
   render = () => {
-    let {blocks} = this.state;
+    let {
+      blocks,
+      loadingBlocks
+    } = this.state;
 
     return (
       <>
-        <MainNav onRequestBlocks={this.loadBlocks} />
+        <MainNav onRequestBlocks={this.loadBlocks} loadingBlocks={loadingBlocks} />
         <BlockTable blocks={blocks} />
       </>
     );

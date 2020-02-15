@@ -1,8 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App render is rendered properly 1`] = `
+exports[`App render renders the main nav and block table 1`] = `
 <Fragment>
   <MainNav
+    loadingBlocks={false}
+    onRequestBlocks={[Function]}
+  />
+  <BlockTable
+    blocks={Array []}
+  />
+</Fragment>
+`;
+
+exports[`App render while blocks are loading passes the loadingBlocks state to the MainNav 1`] = `
+<Fragment>
+  <MainNav
+    loadingBlocks={true}
     onRequestBlocks={[Function]}
   />
   <BlockTable

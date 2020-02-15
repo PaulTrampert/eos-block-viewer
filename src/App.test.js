@@ -7,15 +7,18 @@ import api from './apiWrapper';
 jest.mock('./apiWrapper');
 
 describe('App', () => {
+  let subject;
+  let instance;
+
+  beforeEach(() => {
+    subject = shallow(<App />);
+    instance = subject.instance();
+  })
 
   describe('loadBlocks', () => {
     let blocks;
-    let subject;
-    let instance;
 
     beforeEach(() => {
-      subject = shallow(<App />);
-      instance = subject.instance();
       blocks = [];
       api.getLastBlocks.mockReturnValue(blocks);
     });
@@ -34,16 +37,22 @@ describe('App', () => {
   });
 
   describe('render', () => {
-    it('is rendered properly', () => {
-      const result = shallow(<App />);
-
-      expect(result).toMatchSnapshot();
+    it('renders the main nav and block table', () => {
+      expect(subject).toMatchSnapshot();
     });
 
     it("binds loadBlocks to MainNav's onRequestBlocks event", () => {
-      const result = shallow(<App />);
+      expect(subject.find(MainNav).props().onRequestBlocks).toBe(subject.instance().loadBlocks);
+    });
 
-      expect(result.find(MainNav).props().onRequestBlocks).toBe(result.instance().loadBlocks);
+    describe('while blocks are loading', () => {
+      beforeEach(() => {
+        subject.setState({loadingBlocks: true});
+      });
+
+      it('passes the loadingBlocks state to the MainNav', () => {
+        expect(subject).toMatchSnapshot();
+      });
     });
   });
 });

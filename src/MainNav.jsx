@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import Navbar from 'react-bootstrap/Navbar'
 import Button from 'react-bootstrap/Button'
 
-function MainNav({onRequestBlocks}) {
+function MainNav({onRequestBlocks, loadingBlocks}) {
   return (
     <Navbar bg="dark" variant="dark" className="justify-content-between">
       <Navbar.Brand>EOS Block Viewer</Navbar.Brand>
-      <Button onClick={onRequestBlocks}>Load</Button>
+      <Button onClick={onRequestBlocks} disabled={loadingBlocks}>Load</Button>
     </Navbar>
   );
 }
