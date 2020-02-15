@@ -10,6 +10,7 @@ jest.mock('./countActions');
 describe('BlockRow', () => {
   let block;
   let subject;
+  let instance;
 
   beforeEach(() => {
     block = {
@@ -21,6 +22,29 @@ describe('BlockRow', () => {
     countActions.mockReturnValue(0);
 
     subject = shallow(<BlockRow block={block} />);
+    instance = subject.instance();
+  });
+
+  describe('showDetails', () => {
+    it('sets state.showDetails to true', () => {
+      instance.showDetails();
+
+      expect(subject.state().showDetails).toBe(true);
+    });
+  });
+
+  describe('hideDetails', () => {
+    beforeEach(() => {
+      subject.setState({
+        showDetails: true
+      });
+    });
+
+    it('sets state.showDetails to false', () => {
+      instance.hideDetails();
+
+      expect(subject.state().showDetails).toBe(false);
+    });
   });
 
   describe('render', () => {
