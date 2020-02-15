@@ -9,11 +9,11 @@ describe("RawBlockView", () => {
   beforeEach(() => {
     block = {
 
-    }
+    };
     subject = shallow(<RawBlockView block={block} />);
   });
 
   it('renders the stringified block within <pre> tags', () => {
     expect(subject).toMatchSnapshot();
   });
-})
+});

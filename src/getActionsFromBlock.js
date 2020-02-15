@@ -6,4 +6,4 @@ export default (block) => {
     }
   }
   return actions;
-}
+};

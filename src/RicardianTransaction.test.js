@@ -19,7 +19,7 @@ describe('RicardianTransaction', () => {
           version: '0.1.0'
         }
       }
-    }
+    };
     transaction = {
       actions: [
         {
@@ -32,7 +32,7 @@ describe('RicardianTransaction', () => {
           account: 'a'
         },
       ]
-    }
+    };
 
     subject = shallow(<RicardianTransaction abis={abis} transaction={transaction} />);
   });

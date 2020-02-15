@@ -34,6 +34,20 @@ pipeline {
       }
     }
 
+    stage("Lint") {
+      agent {
+        docker {
+          image BASE_IMAGE
+          args "-e HOME=$HOME"
+          reuseNode true
+        }
+      }
+
+      steps {
+        sh "npm run lint-ci"
+      }
+    }
+
     stage("Test") {
       agent {
         docker {

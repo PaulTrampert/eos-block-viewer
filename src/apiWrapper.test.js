@@ -23,7 +23,7 @@ describe('apiWrapper', () => {
       for(let key in abiCache) {
         delete abiCache[key];
       }
-    })
+    });
 
     it('calls the api to fetch and cache uncached abis', async () => {
       await api.getAbi('bloop');
@@ -36,7 +36,7 @@ describe('apiWrapper', () => {
       await api.getAbi('bloop');
 
       expect(abiCache['bloop']).toEqual({account: 'blerp'});
-    })
+    });
   });
 
   describe('getLastBlocks', () => {
@@ -64,6 +64,6 @@ describe('apiWrapper', () => {
       expect(result).toEqual([
         {id: 987654321}
       ]);
-    })
+    });
   });
 });

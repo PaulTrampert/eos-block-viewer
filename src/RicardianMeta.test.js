@@ -13,27 +13,27 @@ describe('RicardianMeta', () => {
     describe('when title is not set', () => {
       beforeEach(() => {
         subject.setProps({title: undefined});
-      })
+      });
       it("doesn't render the header", () => {
         expect(subject).toMatchSnapshot();
       });
-    })
+    });
     describe('when title is set', () => {
       describe('when icon is not set', () => {
         beforeEach(() => {
-          subject.setProps({icon: undefined})
+          subject.setProps({icon: undefined});
         });
 
         it('renders the header with no icon', () => {
           expect(subject).toMatchSnapshot();
         });
-      })
+      });
       describe('when icon is set', () => {
         it('renders the header with an icon', () => {
           expect(subject).toMatchSnapshot();
         });
-      })
-    })
+      });
+    });
 
     describe('when summary is not set', () => {
       beforeEach(() => {
@@ -43,12 +43,12 @@ describe('RicardianMeta', () => {
       it('renders without a summary', () => {
         expect(subject).toMatchSnapshot();
       });
-    })
+    });
 
     describe('when summary is set', () => {
       it('renders with a summary', () => {
         expect(subject).toMatchSnapshot();
-      })
-    })
+      });
+    });
   });
 });
