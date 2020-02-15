@@ -2,18 +2,25 @@
 
 exports[`BlockTable render when blocks are loaded renders a table with all the blocks 1`] = `
 <ForwardRef
+  className="table"
   hover={true}
   striped={true}
 >
   <thead>
     <tr>
-      <th>
+      <th
+        className="hash"
+      >
         Block Hash
       </th>
-      <th>
+      <th
+        className="timestamp"
+      >
         Timestamp
       </th>
-      <th>
+      <th
+        className="actions"
+      >
         # Actions
       </th>
     </tr>
@@ -55,18 +62,25 @@ exports[`BlockTable render when blocks are loaded renders a table with all the b
 
 exports[`BlockTable render when blocks are loading renders the TableLoadingView 1`] = `
 <ForwardRef
+  className="table"
   hover={true}
   striped={true}
 >
   <thead>
     <tr>
-      <th>
+      <th
+        className="hash"
+      >
         Block Hash
       </th>
-      <th>
+      <th
+        className="timestamp"
+      >
         Timestamp
       </th>
-      <th>
+      <th
+        className="actions"
+      >
         # Actions
       </th>
     </tr>
@@ -79,18 +93,25 @@ exports[`BlockTable render when blocks are loading renders the TableLoadingView 
 
 exports[`BlockTable render when there are no blocks loaded renders the EmptyTableView 1`] = `
 <ForwardRef
+  className="table"
   hover={true}
   striped={true}
 >
   <thead>
     <tr>
-      <th>
+      <th
+        className="hash"
+      >
         Block Hash
       </th>
-      <th>
+      <th
+        className="timestamp"
+      >
         Timestamp
       </th>
-      <th>
+      <th
+        className="actions"
+      >
         # Actions
       </th>
     </tr>
