@@ -16,6 +16,7 @@ describe('RicardianBlockView', () => {
   beforeEach(() => {
     actions = [
       {account: 'a'},
+      {account: 'b'},
       {account: 'b'}
     ];
 
