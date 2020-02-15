@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Table from 'react-bootstrap/Table';
 import BlockRow from './BlockRow';
+import EmptyTableView from './EmptyTableView';
 
 class BlockTable extends React.Component {
   render = () => {
@@ -20,9 +21,12 @@ class BlockTable extends React.Component {
         </thead>
         <tbody>
           {
-            blocks.map(block => (
+            !!blocks.length && blocks.map(block => (
               <BlockRow key={block.id} block={block} />
             ))
+          }
+          {
+            !blocks.length && <EmptyTableView />
           }
         </tbody>
       </Table>

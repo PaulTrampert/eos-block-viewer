@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BlockTable render renders a table with all the blocks 1`] = `
+exports[`BlockTable render when blocks are loaded renders a table with all the blocks 1`] = `
 <ForwardRef
   hover={true}
   striped={true}
@@ -49,6 +49,30 @@ exports[`BlockTable render renders a table with all the blocks 1`] = `
       }
       key="3"
     />
+  </tbody>
+</ForwardRef>
+`;
+
+exports[`BlockTable render when there are no blocks loaded renders the EmptyTableView 1`] = `
+<ForwardRef
+  hover={true}
+  striped={true}
+>
+  <thead>
+    <tr>
+      <th>
+        Block Hash
+      </th>
+      <th>
+        Timestamp
+      </th>
+      <th>
+        # Actions
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <EmptyTableView />
   </tbody>
 </ForwardRef>
 `;

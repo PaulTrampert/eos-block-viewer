@@ -29,8 +29,21 @@ describe('BlockTable', () => {
   });
 
   describe('render', () => {
-    it('renders a table with all the blocks', () => {
-      expect(subject).toMatchSnapshot();
+    describe("when blocks are loaded", () => {
+      it('renders a table with all the blocks', () => {
+        expect(subject).toMatchSnapshot();
+      });
+    });
+
+    describe('when there are no blocks loaded', () => {
+
+      beforeEach(() => {
+        subject.setProps({blocks:[]});
+      });
+
+      it('renders the EmptyTableView', () => {
+        expect(subject).toMatchSnapshot();
+      });
     });
   });
 });
