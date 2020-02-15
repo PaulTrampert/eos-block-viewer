@@ -4,6 +4,7 @@ import Table from 'react-bootstrap/Table';
 import BlockRow from './BlockRow';
 import EmptyTableView from './EmptyTableView';
 import TableLoadingView from './TableLoadingView';
+import styles from './BlockTable.module.css';
 
 class BlockTable extends React.Component {
   render = () => {
@@ -13,12 +14,12 @@ class BlockTable extends React.Component {
     } = this.props;
 
     return (
-      <Table striped hover>
+      <Table striped hover className={styles.table}>
         <thead>
           <tr>
-            <th>Block Hash</th>
-            <th>Timestamp</th>
-            <th># Actions</th>
+            <th className={styles.hash}>Block Hash</th>
+            <th className={styles.timestamp}>Timestamp</th>
+            <th className={styles.actions}># Actions</th>
           </tr>
         </thead>
         <tbody>

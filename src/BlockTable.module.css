@@ -1,0 +1,26 @@
+.table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.table td,
+.table th {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table th {
+  white-space: nowrap;
+}
+
+.hash {
+  width: 50%;
+}
+
+.timestamp {
+  width: 30%;
+}
+
+.actions {
+  width: 20%;
+}
