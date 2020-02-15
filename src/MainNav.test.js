@@ -21,5 +21,17 @@ describe('MainNav', () => {
     it("binds onRequestBlocks to the load button's onClick event", () => {
       expect(subject.find(Button).props().onClick).toBe(onRequestBlocks);
     });
+
+    describe('when blocks are loading', () => {
+      beforeEach(() => {
+        subject.setProps({
+          loadingBlocks: true
+        });
+      });
+
+      it('the load button is disabled', () => {
+        expect(subject).toMatchSnapshot();
+      });
+    });
   });
 });

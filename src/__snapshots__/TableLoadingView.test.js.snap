@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableLoadingView renders a Spinner in the table row 1`] = `
+<tr>
+  <td
+    className="loading"
+    colSpan={3}
+  >
+    <Spinner
+      animation="border"
+      variant="primary"
+    />
+  </td>
+</tr>
+`;

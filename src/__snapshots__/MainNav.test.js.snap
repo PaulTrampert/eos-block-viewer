@@ -22,3 +22,26 @@ exports[`MainNav render renders the nav bar containing the site title and load b
   </Button>
 </Navbar>
 `;
+
+exports[`MainNav render when blocks are loading the load button is disabled 1`] = `
+<Navbar
+  bg="dark"
+  className="justify-content-between"
+  collapseOnSelect={false}
+  expand={true}
+  variant="dark"
+>
+  <NavbarBrand>
+    EOS Block Viewer
+  </NavbarBrand>
+  <Button
+    active={false}
+    disabled={true}
+    onClick={[MockFunction]}
+    type="button"
+    variant="primary"
+  >
+    Load
+  </Button>
+</Navbar>
+`;

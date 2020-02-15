@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmptyTableView Renders the message to click "Load" to get started. 1`] = `
+<tr>
+  <td
+    className="empty"
+    colSpan={3}
+  >
+    Nothing to show. Click 'Load' to get started.
+  </td>
+</tr>
+`;

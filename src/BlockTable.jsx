@@ -2,11 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Table from 'react-bootstrap/Table';
 import BlockRow from './BlockRow';
+import EmptyTableView from './EmptyTableView';
+import TableLoadingView from './TableLoadingView';
 
 class BlockTable extends React.Component {
   render = () => {
     let {
-      blocks
+      blocks,
+      loadingBlocks
     } = this.props;
 
     return (
@@ -20,9 +23,15 @@ class BlockTable extends React.Component {
         </thead>
         <tbody>
           {
-            blocks.map(block => (
+            loadingBlocks && <TableLoadingView />
+          }
+          {
+            !loadingBlocks && !!blocks.length && blocks.map(block => (
               <BlockRow key={block.id} block={block} />
             ))
+          }
+          {
+            !loadingBlocks && !blocks.length && <EmptyTableView />
           }
         </tbody>
       </Table>
