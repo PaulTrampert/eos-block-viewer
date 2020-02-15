@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme'
+import {shallow} from 'enzyme';
 import contractFactory from './ricardianContractFactory';
 import RicardianAction from './RicardianAction';
 
@@ -26,11 +26,11 @@ describe('RicardianAction', () => {
         }
       ]
     };
-    abi = {}
+    abi = {};
     actionIndex = 0;
     meta = {
       title: 'The Everlasting Compact'
-    }
+    };
     html = "<p>Hi there! I'm a contract!</p>";
 
     console.warn = jest.fn();
@@ -39,7 +39,7 @@ describe('RicardianAction', () => {
       getMetadata: jest.fn().mockReturnValue(meta),
       getHtml: jest.fn().mockReturnValue(html)
     };
-  })
+  });
 
   describe('render', () => {
     describe("when the contract gets rendered just fine", () => {
@@ -66,7 +66,7 @@ describe('RicardianAction', () => {
       });
 
       it('logs warning to the console', () => {
-        expect(console.warn).toHaveBeenCalled()
+        expect(console.warn).toHaveBeenCalled();
       });
     });
 
@@ -79,7 +79,7 @@ describe('RicardianAction', () => {
           throw error;
         });
         subject = shallow(<RicardianAction transaction={transaction} abi={abi} actionIndex={actionIndex} />);
-      })
+      });
 
       it('renders an error view', () => {
         expect(subject).toMatchSnapshot();

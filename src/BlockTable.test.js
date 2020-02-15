@@ -37,7 +37,7 @@ describe('BlockTable', () => {
       it('renders the TableLoadingView', () => {
         expect(subject).toMatchSnapshot();
       });
-    })
+    });
 
     describe("when blocks are loaded", () => {
       it('renders a table with all the blocks', () => {

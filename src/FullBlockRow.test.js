@@ -25,8 +25,8 @@ describe('FullBlockRow', () => {
     beforeEach(() => {
       event = {
         stopPropagation: jest.fn()
-      }
-    })
+      };
+    });
 
     it('stops the event propagation', () => {
       subject.instance().setTabKey("key", event);
@@ -39,7 +39,7 @@ describe('FullBlockRow', () => {
 
       expect(subject.state().tabKey).toBe('key');
     });
-  })
+  });
 
   describe('render', () => {
     it('renders tabs for the raw contents of the block and the ricardian contracts', () => {
@@ -52,6 +52,6 @@ describe('FullBlockRow', () => {
 
     it('binds the onSelect event of tabs', () => {
       expect(subject.find(Tabs).props().onSelect).toBe(subject.instance().setTabKey);
-    })
+    });
   });
 });

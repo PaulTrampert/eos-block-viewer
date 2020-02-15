@@ -5,7 +5,7 @@ import getActionsFromBlock from './getActionsFromBlock';
 import RicardianBlockView from './RicardianBlockView';
 
 jest.mock('./apiWrapper');
-jest.mock('./getActionsFromBlock')
+jest.mock('./getActionsFromBlock');
 
 describe('RicardianBlockView', () => {
   let subject;
@@ -34,7 +34,7 @@ describe('RicardianBlockView', () => {
           }
         }
       ]
-    }
+    };
 
     api.getAbi.mockImplementation((account) => ({account, someprop: 'bloop'}));
     getActionsFromBlock.mockReturnValue(actions);
@@ -66,7 +66,7 @@ describe('RicardianBlockView', () => {
       expect(subject.state().abis).toEqual({
         'a': {account: 'a', someprop: 'bloop'},
         'b': {account: 'b', someprop: 'bloop'}
-      })
+      });
     });
   });
 

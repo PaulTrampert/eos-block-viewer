@@ -12,4 +12,4 @@ describe('TableLoadingView', () => {
   it('renders a Spinner in the table row', () => {
     expect(subject).toMatchSnapshot();
   });
-})
+});

@@ -13,7 +13,7 @@ describe('App', () => {
   beforeEach(() => {
     subject = shallow(<App />);
     instance = subject.instance();
-  })
+  });
 
   describe('loadBlocks', () => {
     let blocks;

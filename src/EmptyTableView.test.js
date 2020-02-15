@@ -12,4 +12,4 @@ describe('EmptyTableView', () => {
   it('Renders the message to click "Load" to get started.', () => {
     expect(subject).toMatchSnapshot();
   });
-})
+});

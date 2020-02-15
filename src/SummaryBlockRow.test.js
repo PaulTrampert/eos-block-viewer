@@ -40,5 +40,5 @@ describe('SummaryBlockRow', () => {
     it("renders the block's id, timestamp, and the number of actions", () => {
       expect(subject).toMatchSnapshot();
     });
-  })
+  });
 });
