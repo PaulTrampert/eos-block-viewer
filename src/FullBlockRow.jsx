@@ -27,10 +27,10 @@ class FullBlockRow extends React.Component {
         <td colSpan={3}>
           <Tabs activeKey={tabKey} onSelect={this.setTabKey}>
             <Tab eventKey="raw" title="Raw View">
-              <RawBlockView block={block} />
+              {tabKey === "raw" && <RawBlockView block={block} />}
             </Tab>
             <Tab eventKey="ricardian" title="Ricardian Contracts">
-              <RicardianBlockView block={block} />
+              {tabKey === "ricardian" && <RicardianBlockView block={block} />}
             </Tab>
           </Tabs>
         </td>

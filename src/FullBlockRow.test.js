@@ -53,5 +53,21 @@ describe('FullBlockRow', () => {
     it('binds the onSelect event of tabs', () => {
       expect(subject.find(Tabs).props().onSelect).toBe(subject.instance().setTabKey);
     });
+
+    describe('when tabKey is "raw"', () => {
+      it('does not render the RicardianBlockView and only renders the RawBlockView', () => {
+        expect(subject).toMatchSnapshot();
+      });
+    });
+
+    describe('when tabKey is "ricardian"', () => {
+      beforeEach(() => {
+        subject.setState({tabKey:'ricardian'});
+      });
+
+      it('does not render the RawBlockView and only renders the RicardianBlockView', () => {
+        expect(subject).toMatchSnapshot();
+      });
+    });
   });
 });
