@@ -31,6 +31,70 @@ exports[`FullBlockRow render renders tabs for the raw contents of the block and 
       <Tab
         eventKey="ricardian"
         title="Ricardian Contracts"
+      />
+    </Tabs>
+  </td>
+</tr>
+`;
+
+exports[`FullBlockRow render when tabKey is "raw" does not render the RicardianBlockView and only renders the RawBlockView 1`] = `
+<tr
+  onClick={[MockFunction]}
+>
+  <td
+    colSpan={3}
+  >
+    <Tabs
+      activeKey="raw"
+      mountOnEnter={false}
+      onSelect={[Function]}
+      unmountOnExit={false}
+      variant="tabs"
+    >
+      <Tab
+        eventKey="raw"
+        title="Raw View"
+      >
+        <RawBlockView
+          block={
+            Object {
+              "id": "asdfasdf",
+              "timestamp": "2020-02-08T20:20:20Z",
+              "transactions": Array [],
+            }
+          }
+        />
+      </Tab>
+      <Tab
+        eventKey="ricardian"
+        title="Ricardian Contracts"
+      />
+    </Tabs>
+  </td>
+</tr>
+`;
+
+exports[`FullBlockRow render when tabKey is "ricardian" does not render the RawBlockView and only renders the RicardianBlockView 1`] = `
+<tr
+  onClick={[MockFunction]}
+>
+  <td
+    colSpan={3}
+  >
+    <Tabs
+      activeKey="ricardian"
+      mountOnEnter={false}
+      onSelect={[Function]}
+      unmountOnExit={false}
+      variant="tabs"
+    >
+      <Tab
+        eventKey="raw"
+        title="Raw View"
+      />
+      <Tab
+        eventKey="ricardian"
+        title="Ricardian Contracts"
       >
         <RicardianBlockView
           block={
